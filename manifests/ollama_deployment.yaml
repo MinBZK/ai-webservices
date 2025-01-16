@@ -56,7 +56,9 @@ spec:
               protocol: TCP
           resources:
             limits: {}
-            requests: {}
+            requests: 
+              memory: "8Gi"
+              cpu: "2000m"
           volumeMounts:
             - name: ollama-data
               mountPath: /root/.ollama
