@@ -7,7 +7,11 @@ namePrefix: ai-
 buildMetadata: [originAnnotations]
 
 resources:
-  - manifests/deployment.yaml
-  - manifests/service.yaml
-  - manifests/serviceaccount.yaml
-  - manifests/test-connection.yaml
+  - manifests/ollama_deployment.yaml
+  - manifests/ollama_service.yaml
+  - manifests/ollama_serviceaccount.yaml
+  - manifests/ollama_test-connection.yaml
+  - manifests/whisper_config.yaml
+  - manifests/whisper_deployment.yaml
+  - manifests/whisper_service.yaml
+  - manifests/whisper_testpod.yaml

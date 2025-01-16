@@ -1,4 +1,4 @@
-# Source: ollama/templates/tests/test-connection.yaml
+# Source: ollama/templates/tests/ollama_test-connection.yaml
 apiVersion: v1
 kind: Pod
 metadata:

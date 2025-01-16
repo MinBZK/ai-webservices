@@ -1,0 +1,22 @@
+# Source: whisper/templates/configmap.yaml
+# Copyright (C) 2024 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: whisper-config
+  labels:
+    helm.sh/chart: whisper-1.0.0
+    app.kubernetes.io/name: whisper
+    app.kubernetes.io/instance: whisper
+    app.kubernetes.io/version: "v1.0"
+    app.kubernetes.io/managed-by: Helm
+data:
+  EASYOCR_MODULE_PATH: "/tmp/.EasyOCR"
+  ASR_MODEL_PATH: "openai/whisper-small"
+  http_proxy: ""
+  https_proxy: ""
+  no_proxy: ""
+  HF_HOME: "/tmp/.cache/huggingface"
+  HUGGINGFACE_HUB_CACHE: "/data"
