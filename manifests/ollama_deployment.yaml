@@ -27,9 +27,22 @@ spec:
         app.kubernetes.io/version: "0.5.5"
         app.kubernetes.io/managed-by: Helm
     spec:
-      serviceAccountName: ollama
       securityContext:
         {}
+      initContainers:
+        - name: ollama-init
+          image: "ollama/ollama:0.5.5"
+          command:
+            - /bin/sh
+            - -c
+            - |
+              ollama pull llama3.2
+              ollama pull gemma2
+              ollama pull mistral
+              ollama pull phi4
+          volumeMounts:
+            - name: ollama-data
+              mountPath: /root/.ollama
       containers:
         - name: ollama
           securityContext:
@@ -40,9 +53,6 @@ spec:
             - name: http
               containerPort: 11434
               protocol: TCP
-          env:
-          envFrom:
-          args:
           resources:
             limits: {}
             requests: {}
@@ -69,4 +79,5 @@ spec:
             failureThreshold: 6
       volumes:
         - name: ollama-data
-          emptyDir: { }
+          persistentVolumeClaim:
+            claimName: pvc-ollama
