@@ -1,10 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: tn-openbsw-ai
+namespace: ollama
 namePrefix: ai-
 
 buildMetadata: [originAnnotations]
 
 resources:
-  - ...
+  - manifests/deployment.yaml
+  - manifests/service.yaml
+  - manifests/serviceaccount.yaml
+  - manifests/test-connection.yaml

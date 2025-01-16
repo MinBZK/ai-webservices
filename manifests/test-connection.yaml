@@ -1,0 +1,21 @@
+# Source: ollama/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ollama-test-connection"
+  namespace: tn-openbsw-ai
+  labels:
+    helm.sh/chart: ollama-1.2.0
+    app.kubernetes.io/name: ollama
+    app.kubernetes.io/instance: ollama
+    app.kubernetes.io/version: "0.5.5"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['ollama:11434']
+  restartPolicy: Never
