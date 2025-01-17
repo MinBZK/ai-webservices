@@ -27,8 +27,7 @@ spec:
         app.kubernetes.io/version: "0.5.5"
         app.kubernetes.io/managed-by: Helm
     spec:
-      securityContext:
-        {}
+      securityContext: {}
       initContainers:
         - name: ollama-init
           image: "ollama/ollama:0.5.5"
@@ -44,8 +43,7 @@ spec:
               mountPath: /root/.ollama
       containers:
         - name: ollama
-          securityContext:
-            {}
+          securityContext: {}
           image: "ollama/ollama:0.5.5"
           imagePullPolicy: IfNotPresent
           ports:
@@ -54,7 +52,7 @@ spec:
               protocol: TCP
           resources:
             limits: {}
-            requests: 
+            requests:
               memory: "8Gi"
               cpu: "2000m"
           volumeMounts:

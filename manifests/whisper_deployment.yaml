@@ -24,8 +24,7 @@ spec:
         app.kubernetes.io/name: whisper
         app.kubernetes.io/instance: whisper
     spec:
-      securityContext:
-        {}
+      securityContext: {}
       containers:
         - name: whisper
           envFrom:
@@ -35,7 +34,7 @@ spec:
             allowPrivilegeEscalation: false
             capabilities:
               drop:
-              - ALL
+                - ALL
             readOnlyRootFilesystem: false
             runAsNonRoot: true
             runAsUser: 1000
@@ -72,8 +71,7 @@ spec:
               port: whisper
             initialDelaySeconds: 5
             periodSeconds: 5
-          resources:
-            {}
+          resources: {}
       volumes:
         - name: model-volume
           emptyDir: {}
