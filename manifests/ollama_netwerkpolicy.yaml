@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-my-namespaces-ollama
+spec:
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: tn-openbsw-basis
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: tn-openbsw-chat
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: tn-openbsw-meet
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: tn-openbsw-grist
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: tn-openbsw-ai-assistant
+  podSelector: {}
+  policyTypes:
+  - Ingress
