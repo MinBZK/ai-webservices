@@ -4,19 +4,19 @@ metadata:
   name: allow-my-namespaces-ollama
 spec:
   ingress:
-  - from:
-    - namespaceSelector:
-        matchLabels:
-          kubernetes.io/metadata.name: tn-openbsw-basis
-    - namespaceSelector:
-        matchLabels:
-          kubernetes.io/metadata.name: tn-openbsw-chat
-    - namespaceSelector:
-        matchLabels:
-          kubernetes.io/metadata.name: tn-openbsw-meet
-    - namespaceSelector:
-        matchLabels:
-          kubernetes.io/metadata.name: tn-openbsw-grist
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: tn-openbsw-basis
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: tn-openbsw-chat
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: tn-openbsw-meet
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: tn-openbsw-grist
   podSelector: {}
   policyTypes:
-  - Ingress
+    - Ingress
