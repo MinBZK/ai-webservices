@@ -13,3 +13,5 @@ resources:
   - manifests/whisper_config.yaml
   - manifests/whisper_deployment.yaml
   - manifests/whisper_service.yaml
+  - manifests/ollama_netwerkpolicy.yaml
+  - manifests/whisper_netwerkpolicy.yaml
