@@ -4,10 +4,10 @@ metadata:
   name: allow-my-namespaces-whisper
 spec:
   ingress:
-  - from:
-    - namespaceSelector:
-        matchLabels:
-          kubernetes.io/metadata.name: tn-openbsw-meet
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: tn-openbsw-meet
   podSelector: {}
   policyTypes:
-  - Ingress
+    - Ingress
