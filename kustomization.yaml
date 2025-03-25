@@ -5,13 +5,3 @@ namespace: tn-openbsw-ai
 namePrefix: ai-
 
 buildMetadata: [originAnnotations]
-
-resources:
-  - manifests/ollama_deployment.yaml
-  - manifests/ollama_service.yaml
-  - manifests/ollama_pvc.yaml
-  - manifests/whisper_config.yaml
-  - manifests/whisper_deployment.yaml
-  - manifests/whisper_service.yaml
-  - manifests/ollama_netwerkpolicy.yaml
-  - manifests/whisper_netwerkpolicy.yaml
